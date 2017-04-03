@@ -7,7 +7,7 @@ var _db;
 module.exports = {
 
   connectToServer: function(callback) {
-    MongoClient.connect('mongodb://localhost:27017/database', function(err, db) {
+    MongoClient.connect('mongodb://houshuo:houshuo123@ds149040.mlab.com:49040/heroku_lqqwv4fx', function(err, db) {
       _db = db;
       return callback(err);
     });
