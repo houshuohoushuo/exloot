@@ -8,12 +8,7 @@ app.use(cors({}));
 
 // MongoDB
 var mongo = require('./mongo.js');
-mongo.connectToServer(function(err) {
-  // Database is ready; listen on port 3000
-  app.listen(3000, function () {
-    console.log('App listening on port 3000');
-  });
-});
+
 
 // MongoDB auto-increment
 var autoIncrement = require("mongodb-autoincrement");
@@ -100,11 +95,18 @@ app.get('/',function(req,res){
   res.sendFile(__dirname+'/homepage.html');
 });
 
+
 // Users endpoints
 require('./users.js')(app, mongo, autoIncrement, sha1, generateToken, parsePost);
 
 // posts endpoints
 require('./posts.js')(app, mongo, autoIncrement, parsePost);
 
+mongo.connectToServer(function(err) {
+  // Database is ready; listen on port 3000
+  app.listen(3000, function () {
+    console.log('App listening on port 3000');
+  });
+});
 
 
