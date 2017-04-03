@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+     "test": "echo \"Error: no tests \" && exit 1",
     "start" : "node index.js"
   },
+    "engines": {
+    "node": "4.4.3"
+},
   "author": "Team19",
   "license": "ISC",
   "dependencies": {
