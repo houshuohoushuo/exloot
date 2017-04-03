@@ -104,8 +104,8 @@ require('./posts.js')(app, mongo, autoIncrement, parsePost);
 
 mongo.connectToServer(function(err) {
   // Database is ready; listen on port 3000
-  app.listen(5000, function () {
-    console.log('App listening on port 5000');
+  app.listen(process.env.PORT || 3000, function () {
+    console.log('App listening on port 3000');
   });
 });
 
