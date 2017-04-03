@@ -103,6 +103,8 @@ require('./users.js')(app, mongo, autoIncrement, sha1, generateToken, parsePost)
 require('./posts.js')(app, mongo, autoIncrement, parsePost);
 
 mongo.connectToServer(function(err) {
+      console.log("MongoDB Error"+ err);
+
   // Database is ready; listen on port 3000
   app.listen(process.env.PORT || 3000, function () {
     console.log('App listening on port 3000');
